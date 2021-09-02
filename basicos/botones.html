@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <style>
+        #btn5{
+            color : rgb(61, 53, 42);
+        }
+    </style>
+</head>
+
+<body>
+    <div id ="grupoBotones">
+        <button id="btn1" class="btnClass">Boton 1</button>
+        <button id="btn2" class="btnClass">Boton 2</button>
+        <button id="btn3" class="btnClass">Boton 3</button>
+
+
+    </div>
+    <button id="btn5" class="btnClass">Soy el filtrado</button>
+
+    <script>
+        console.log(document.children);
+
+        var botones = document.getElementsByTagName('button');
+        console.log(botones);
+
+        let grupoBotones = document.getElementById("grupoBotones");
+        let nuevoBoton = document.createElement("button");
+        nuevoBoton.innerText = "Boton4";
+        nuevoBoton.setAttribute("id", "btn4");
+        grupoBotones.appendChild(nuevoBoton);
+        // recorrer todos los botones del documento
+        for(boton of botones){
+            
+            boton.style.color = "rebeccapurple";
+        };
+
+
+        var botonesGpo = grupoBotones.getElementsByTagName("button");
+        for(var i = 0; i<botonesGpo.length; i++)
+        {
+            botonesGpo[i].style.color = "red";
+        }
+
+
+        boton1 = document.getElementById("btn1");
+        boton1.style.color = "brown";
+        boton1.style.bgColor = "pink";
+        boton1.addEventListener("click", function(){
+            alert('Click boton 1')
+        })
+    </script>
+</body>
+</html>

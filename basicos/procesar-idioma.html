@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Procesar idioma</title>
+</head>
+
+<body>
+    <div id="divLang">
+        <input type="radio" id="english" name="rbLanguage" value="ENG" onchange="validaBtn()">
+        <label for="english">English</label>
+        <input type="radio" id="spanish" name="rbLanguage" value="ESP" onchange="validaBtn()">
+        <label for="spanish">Spanish</label>
+
+        <button id="btnSaludar" disabled>Mandar saludo</button>
+
+    </div>
+
+    <script>
+
+        function validaBtn() {
+            
+            var rbLanguage = document.querySelector('input[name = "rbLanguage"]:checked');
+            // Habilita boton
+            var btn = document.getElementById("btnSaludar");            
+            btn.disabled = (rbLanguage < 1)
+            
+            // reasignar funcion
+            btn.onclick=null;
+            if (rbLanguage != null) {
+                btn.onclick = (rbLanguage.id == "english" ? greet : saludar) ;
+            }
+
+           
+        }
+        function greet() {
+            console.log("Hello, User");
+        }
+        function saludar() {
+            console.log("Hola, Usuario");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        function saluda() {}
+        //     var rbLanguage = document.querySelector('input[name = "rbLanguage"]:checked');
+        //     if (rbLanguage != null) {
+        //         console.log(rbLanguage.id == "english" ? "Hello, User" : "Hola, Usuario");
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

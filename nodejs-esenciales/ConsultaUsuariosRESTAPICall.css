@@ -1,0 +1,69 @@
+body {
+    background-color: #f1c8ca;
+}
+.divPpal {
+    margin: 8px;
+    width: 60%;
+    padding: 11px;
+    border: 1px solid #eae6ec;
+    background-color: #fdf2f8;
+}
+        
+label.lbName {
+    color: #b528a4;
+    margin-right: 6px;
+    font-weight: bold;
+}
+.divBusqueda {
+    background-color: #ab7a93;
+    display: inline-block;
+    padding: 11px;
+    /* color: #4a2c71; */
+    color: #f0f7ed;
+    font-weight: bold;
+}
+button#btnBuscarUsr {
+    background-color: #ffd2e3;
+    border: 2px solid #92738d;
+    padding: 3px;
+    border-radius: 4px;    
+    font-weight: bold;
+}
+
+.divContentElem {
+    /* background-color: #fdf4fb;
+    border: 1px solid #ded3e8; */    
+    background-color: #fffee9;
+    border: 1px solid #809821;
+    width: 40%;
+    max-width: 250px;
+    min-width: 190px;
+    padding: 11px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.encContent {
+    font-size: 20px;
+    color: #6f222f;
+    font-weight: bold;
+    font-style: oblique;    
+    border-bottom: 1px solid #e2d5da;
+}
+
+.divCampo {
+    text-align: left;
+}
+
+.titHeader {
+    font-size: 25px;
+    color: #6f222f;
+    font-weight: bold;
+}
+
+.lbText {
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ArrowFuntions</title>
+
+</head>
+
+<body>
+    <script>
+
+        let listaNumeros = [20, 33, 45, 12, 11, 23];
+
+        var procesaNumero = (numero) => {
+            if (!isNaN(numero)) {
+                if (numero % 2 != 0) {
+                    numero -= 5;
+                }
+                else {
+                    numero += 5;
+                }
+
+                console.log(numero);
+            }
+        }
+
+
+        listaNumeros.forEach(numero => {
+            procesaNumero(numero);
+        });
+
+
+        function parNonIvan(){
+            let listaNumeros = [20, 33, 45, 12, 11, 23];
+            listaNumeros.forEach((elnumero)=> console.log(elnumero+((elnumero%2==0)?5:-5)));
+
+            //programacion reactiva
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Procesar idioma</title>
+</head>
+
+<body>
+    <div id="divLang">
+        <input type="radio" id="currentLanguage" name="currentLanguage" value="english" onclick="changeDelegate(this)">
+        English <br>
+        <input type="radio" id="currentLanguage" name="currentLanguage" value="spanish" onclick="changeDelegate(this)">
+        Spanish <br>
+
+        <input type="button" id="btnAlertUsuario" value="Message" />
+
+    </div>
+
+    <script>
+
+        let greetUser = function() {
+            console.log("Hello, User")
+        }
+        let saludarUsuario = function() {
+            console.log("Hola, Usuario")
+        }
+        let eventHandler;
+
+        function changeDelegate(radioButton) {
+            let boton = document.getElementById("btnAlertUsuario");
+            boton.removeEventListener("click", eventHandler);
+            
+            if(radioButton.value == "english"){
+                eventHandler = greetUser;
+            }
+            else{
+                eventHandler = saludarUsuario;
+
+            }
+            boton.addEventListener("click", eventHandler);
+
+        }
+
+        function validaBtn() {
+            var btn = document.getElementById("btnSaludar");
+            btn.disabled = (document.querySelector('input[name = "rbLanguage"]:checked') < 1)
+        }
+
+    </script>
+</body>
+
+</html>

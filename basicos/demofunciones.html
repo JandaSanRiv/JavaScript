@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Functions</title>
+</head>
+
+<body>
+    <script src="/utils/functions.js"></script>
+    <script>
+        let resultado = sumaNumeros(60, 22);
+        console.log("resultado = "+ resultado);
+
+        let cadena = "alma alejandra sanchez";
+        let carBuscar = "r";
+        let encontrado = buscaCaracter(cadena, carBuscar);
+        console.log("se encontro "+carBuscar+" en "+cadena+" ? "+encontrado);
+
+        console.log(`El caracter ${carBuscar} ${encontrado?"si" : "no"} existe en la cadena ${cadena}`);
+
+        // funcion anonima que esta asognada a una variable
+        const elevaAlCuadradoFuncion = function(numero, potencia){
+            return Math.pow(numero, potencia);
+        }
+        
+        // var elevaAlCuadradoFuncion2(numero: any, potencia: any) => number // aqui dice que soo puede utilizarse en TypeScript
+        alert(elevaAlCuadradoFuncion(2, 4));
+
+        const multiplicacion = (x, y) => x*y;
+        alert(multiplicacion(50,20));
+
+        const potenciaNumero = (numero, potencia) =>{
+         return Math.pow(numero, potencia);
+        }
+        alert(potenciaNumero(2, 5));
+
+    </script>
+</body>
+</html>

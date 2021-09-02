@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Consulta Usuarios</title>
+    <link rel="stylesheet" href="./ConsultaUsuariosRESTAPICall.css">
+</head>
+
+<body>
+    <div class="divPpal">
+        <div class="form-control">
+            <div class="titHeader">Busqueda de usuarios JSONPlaceHolder</div>
+
+            <label for="idUsr">Id usuario:</label>
+            <input type="text" id="idUsr" />
+            <button id="btnBuscarUsr" onclick="buscarUsr()">Buscar</button>
+        </div>
+        <div class="divContentElem">
+            <div class="encContent">Informacion del usuario</div>
+                <div class="divCampo"><label class="lbName">Nombre:</label><span id="lbNombre" class="lbText"></span>
+                </div>
+                <div class="divCampo"><label class="lbName">Email:</label><span id="lbEmail" class="lbText"></span>
+                </div>
+
+
+            </div>
+
+        </div>
+        <script src="./ConsultaUsuarios-XHR-RESTAPICall.js"></script>
+</body>
+
+</html>

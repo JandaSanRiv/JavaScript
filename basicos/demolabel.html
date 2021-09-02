@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Labeled loops</title>
+    <link href=https://fonts.googleapis.com/ css?family=Architects+Daughter|Bowlby+One+SC rel="stylesheet">
+    
+</head>
+
+<body>
+    <h1>Label continue</h1>
+    
+</body>
+
+</html>
+<script>
+
+    console.log("Odd number count started!");
+    let oddsCount = 0;
+    odd_number:
+    for (let i = 1; i <= 10; i++) {
+        console.log("Iteration:", i);
+        var number = Math.floor(Math.random() * 12) + 1;
+        if (number % 2 == 0) {
+            continue odd_number;/// ve a este label// codigo espaguetti
+        }
+            oddsCount++;
+        console.log("Number:", number);
+    }
+    console.log(oddsCount + " odd numbers found!");
+</script>

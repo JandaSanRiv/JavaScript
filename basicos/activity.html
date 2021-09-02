@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <link href=https://fonts.googleapis.com/ css?family=Architects+Daughter|Bowlby+One+SC rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(37, 37, 37);
+            color: aliceblue;
+            padding: 2rem;
+            margin: 0;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-family: 'Bowlby One SC', cursive;
+            font-size: 2.8rem;
+            color: cornflowerblue;
+            margin: 0;
+        }
+
+        ol {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <ol id="toDoList"><!-- 2. Assign an ID to our list in order to identify it via code. -->
+        <li>Wash Laundry</li>
+        <li>Clean Silver</li>
+        <li>Write Letters</li>
+        <li>Purchase Groceries</li>
+        <li>Retrieve Mail</li>
+        <li>Prepare Dinner</li>
+    </ol>
+    <button onclick="alternateColor()">Alternate colors in list</button>
+    <button onclick="changeColor('toDoList')">Change color in list items</button>
+    <script>
+        // JavaScript here!
+    </script>
+</body>
+
+</html>
+<script src="./activity.js" charset="utf-8"></script>
+<script>
+    
+    
+    //3.  Create a new variable and use the ID to address this element directly by the use of
+//the getElementById() method.
+    var toDoList = document.getElementById("toDoList");
+    //8. Verify the execution order of our commands by counting the initial number of list items.
+    console.log("Hay "+toDoList.children.length+" elementos en la lista al inicio");
+    // 4. Create a new HTML list item element.
+    var newToDoList = document.createElement("li");
+    // 5. Populate the list item with a data value.
+    newToDoList.innerText = "27/08/2021";
+    //6. Add it to the visual document by appending it to a chosen parent container that already exists.
+    toDoList.appendChild(newToDoList);
+    toDoList.lastChild.style.color = "magenta";
+    //9. Then, count the final number of list items after code execution.
+    console.log("Hay "+toDoList.children.length+" elementos en la lista al final");
+    
+
+    // alert("The quote \n\"The only source of knowledge is experience\n\" is attributed to Albert Einstein");
+</script>

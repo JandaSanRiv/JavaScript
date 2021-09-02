@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Node Easy Notes</title>
+    <style>
+        .divInput {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divAdd">
+        <div class="divInput">
+            <label for="txtTitle" class="lblField">Titulo</label>
+            <input type="text" id="txtTitle" class="txtInput" />
+        </div>
+        <div class="divInput">
+            <label for="txtContent" class="lblField">Contenido</label>
+            <input type="text" id="txtContent" class="txtInput" />
+        </div>
+        <button id="btnAddNote">Agregar nota</button>
+    </div>
+    <table id="tblNotes">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+            </tr>
+        </thead>
+        <tbody id="tbNotes">
+            <!-- <tr><td>Updated at</td></tr> -->
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./notes.js"></script>
+</body>
+
+</html>

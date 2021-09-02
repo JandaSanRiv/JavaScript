@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Node Easy Notes</title>
+    <style>
+        .divInput {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divAdd">
+        <div class="divInput">
+            <label for="noteTitle" class="lblField">Titulo</label>
+            <input type="text" id="noteTitle" class="txtInput" />
+        </div>
+        <div class="divInput">
+            <label for="noteContent" class="lblField">Contenido</label>
+            <input type="text" id="noteContent" class="txtInput" />
+        </div>
+        <button id="btnAddNote" onclick="guardarNota()">Agregar nota</button>
+    </div>
+    <div>
+        <ol id="notas">Notas</ol>
+    </div>
+    <!-- <table id="tblNotes">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+            </tr>
+        </thead>
+        <tbody id="tbNotes">
+        </tbody>
+    </table> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        despliegaLasNotas()
+        function despliegaLasNotas() {
+            let listaNotas = document.getElementById("notas");
+            while (listaNotas.firstChild)
+                listaNotas.removeChild(listaNotas.firstChild)
+
+            fetch('http://localhost:3000/notes')
+                .then(response => response.json())
+                .then(notas => {
+                    notas.forEach((nota) => {
+                        let nuevaNota = document.createElement("li");
+                        nuevaNota.innerHTML = `Titulo: ${nota.title} Contenido: ${nota.content}`;
+                        listaNotas.appendChild(nuevaNota);
+
+                    });
+                })
+                .catch((error) => {
+                    console.log("No se obtuvo una respuesta");
+                })
+                .finally(function () {
+
+                });
+        }
+
+        function guardarNota() {
+            let txtTitulo = document.getElementById("noteTitle");
+            let txtContenido = document.getElementById("noteContent");
+
+            fetch('http://localhost:3000/notes', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: txtTitulo.value,
+                    content: txtContenido.value
+                }),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+                .then(response => response.json()
+                    .then(json => { }))
+                .finally(function () {
+                    despliegaLasNotas();
+                });
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Valida DOM</title>
+</head>
+
+<body>
+    <!--Utilizando delegation para event handling-->
+    <h1>Valida DOM</h1>
+    Introduce tu ciudad
+    <input type="text" id="txt1" onkeyup="validarBotones()" oninput="checkButtons()">
+    Introduce tu nombre
+    <input type="text" id="txt2" onkeyup="validarBotones()" oninput="checkButtons()">
+    Introduce tu correo
+    <input type="text" id="txt3" onkeyup="validarBotones()" oninput="checkButtons()">
+    <button id="btn1" class="btnGrp" disabled>Boton 1</button>
+    <button id="btn2" class="btnGrp" disabled>Boton 2</button>
+
+    <script>
+
+        function checkButtons() {}
+        let iTxt = document.getElementById("txt1");
+        let btns = document.getElementsByClassName("btnGrp");
+        //     if (iTxt.value != undefined && iTxt.value.length > 0) {
+
+        //         for (btn of btns) {
+        //             btn.disabled = false;
+        //         }
+        //     }
+        //     else {
+
+        //         for (btn of btns) {
+        //             btn.disabled = true;
+        //         }
+        //     }
+        // }
+        let textbox1 = document.getElementById("txt1");
+        let textbox2 = document.getElementById("txt2");
+        let textbox3 = document.getElementById("txt3");
+
+        textbox1.addEventListener("keydown", validarBotones2());
+        textbox2.addEventListener("keydown", validarBotones2());
+        textbox3.addEventListener("keydown", validarBotones2());
+
+
+        // textbox1.addEventListener("keyup", function () {
+        //     // let numeroDeCaracteres1 =textbox1.value.length;
+        //     // let numeroDeCaracteres2 =textbox2.value.length;
+        //     // let numeroDeCaracteres3 =textbox3.value.length;
+        //     // let numeroDeCaracteres = numeroDeCaracteres1+numeroDeCaracteres2+numeroDeCaracteres3;            
+        //     let numeroDeCaracteres = validaNumeroDeCaracteres(textbox1, textbox2, textbox3);
+        //     cajasLlenas = (numeroDeCaracteres1 > 0 && numeroDeCaracteres2 > 0 && numeroDeCaracteres3 > 0)
+        //     for (boton of btns) {
+        //         boton.disabled = !cajasLlenas;
+        //     }
+
+        // });
+        // textbox2.addEventListener("keyup", function () {
+        //     // let numeroDeCaracteres1 =textbox1.value.length;
+        //     // let numeroDeCaracteres2 =textbox2.value.length;
+        //     // let numeroDeCaracteres3 =textbox3.value.length;
+        //     // let numeroDeCaracteres = numeroDeCaracteres1+numeroDeCaracteres2+numeroDeCaracteres3;
+        //     let numeroDeCaracteres = validaNumeroDeCaracteres(textbox1, textbox2, textbox3);
+        //     cajasLlenas = (numeroDeCaracteres1 > 0 && numeroDeCaracteres2 > 0 && numeroDeCaracteres3 > 0)
+        //     for (boton of btns) {
+        //         boton.disabled = !cajasLlenas;
+        //     }
+
+        // });
+
+
+        // textbox3.addEventListener("keyup", function () {
+
+        //     let numeroDeCaracteres = validaNumeroDeCaracteres(textbox1, textbox2, textbox3);
+        //     cajasLlenas = (numeroDeCaracteres1 > 0 && numeroDeCaracteres2 > 0 && numeroDeCaracteres3 > 0)
+        //     // let numeroDeCaracteres = numeroDeCaracteres1+numeroDeCaracteres2+numeroDeCaracteres3;
+        //     for (boton of btns) {
+        //         boton.disabled = !cajasLlenas;
+        //     }
+
+        // });
+        function validarBotones2() {
+            console.log("Holis")
+        }
+
+        function validarBotones() {
+            let textbox1 = document.getElementById("txt1");
+            let textbox2 = document.getElementById("txt2");
+            let textbox3 = document.getElementById("txt3");
+            let numeroDeCaracteres1 = textbox1.value.length;
+            let numeroDeCaracteres2 = textbox2.value.length;
+            let numeroDeCaracteres3 = textbox3.value.length;            
+            let btns = document.getElementsByClassName("btnGrp");
+            // let numeroDeCaracteres = validaNumeroDeCaracteres(textbox1, textbox2, textbox3);
+            cajasLlenas = (numeroDeCaracteres1 > 0 && numeroDeCaracteres2 > 0 && numeroDeCaracteres3 > 0)
+            for (boton of btns) {
+                boton.disabled = !cajasLlenas;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
