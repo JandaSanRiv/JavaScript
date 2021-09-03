@@ -17,14 +17,8 @@ function addNote() {
         dataType: 'json',
         data: JSON.stringify(jsonData),
         success: function (result) {
-            if(result.ok){
             // alert("Nota agregada correctamente");
-            console.log("Nota agregada correctamente")
-            }
-            else{
-                // alert("No se pudo agregar la nota");
-                console.log("No se pudo agregar la nota")
-            }
+            console.log("Nota agregada correctamente");
         },
         error: function () {
             alert("no se realizo correctamente la insercion")
